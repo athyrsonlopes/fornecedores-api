@@ -1,24 +1,41 @@
-# README
+# Fornecedores API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API REST para cadastro e gerenciamento de fornecedores, desenvolvida com Ruby on Rails e PostgreSQL.
 
-Things you may want to cover:
+## Tecnologias
 
-* Ruby version
+- Ruby on Rails 8 (API mode)
+- PostgreSQL
+- Ruby 3.x
 
-* System dependencies
+## Como rodar localmente
 
-* Configuration
+```bash
+# Instalar dependências
+bundle install
 
-* Database creation
+# Criar e migrar o banco
+rails db:create db:migrate
 
-* Database initialization
+# Iniciar o servidor
+rails server
+```
 
-* How to run the test suite
+## Endpoints
 
-* Services (job queues, cache servers, search engines, etc.)
+| Método | Rota              | Descrição                 |
+| ------- | ----------------- | --------------------------- |
+| GET     | /fornecedores     | Lista todos os fornecedores |
+| GET     | /fornecedores/:id | Busca um fornecedor         |
+| POST    | /fornecedores     | Cria um fornecedor          |
+| PUT     | /fornecedores/:id | Atualiza um fornecedor      |
+| DELETE  | /fornecedores/:id | Remove um fornecedor        |
 
-* Deployment instructions
+## Modelo de dados
 
-* ...
+| Campo     | Tipo   | Descrição                |
+| --------- | ------ | -------------------------- |
+| nome      | string | Nome do fornecedor         |
+| cnpj      | string | CNPJ do fornecedor         |
+| categoria | string | Categoria (ex: Tecnologia) |
+| status    | string | Status (ativo, inativo)    |
